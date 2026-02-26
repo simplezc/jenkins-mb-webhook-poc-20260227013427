@@ -1,0 +1,11 @@
+pipeline {
+  agent any
+  stages {
+    stage('webhook-poc') {
+      steps {
+        echo "webhook-poc ${env.BUILD_TAG}"
+        sh 'date -u > poc_timestamp.txt && cat poc_timestamp.txt'
+      }
+    }
+  }
+}
